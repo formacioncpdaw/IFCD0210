@@ -1,0 +1,27 @@
+/* Selectores*/
+
+
+/* Selector Elemento*/
+
+    h3 {
+        font-size: 25px;
+        color: green;
+    }
+
+    /* Selector por ID */
+
+    #testimonios {
+                font-size: 30;
+                color: aqua;
+    }
+
+    /* Selector Genéricos */ (Se decara en HTML por ejemplo con <h1 class=.general></h1>)
+
+    .general {
+            font-size: 28px;
+            color: brown;
+    }
+
+    .section p{
+            color:blue;
+    }
