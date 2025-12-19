@@ -1,0 +1,23 @@
+Posicionamiento (todos tienen top, left, right, botton):
+
+- Absoluto (absolute): Necesita un contenedor relativo primero. Se declara con: "position: absolute;" Se posicina en la posición "0, 0" en función del antepasado más cercano.
+si se aplca a un h1, ya no ocuparía todo el espacio de ancho por ser elemento de bloque is se le asigna absolute
+
+- Relativo (relative): Es fijo pero los elementos de dentro puede colocarse como quieran. (el positivo es hacia abajo y derecha) Lo svalores que se le dan empujan
+ejemplo:
+	top: 100 px: empuja hacia abajo
+	left: empuja hacia la derecha
+	
+- Fixed (fijo): (su guia o referencia es el viewport (página)) declarar : "position: fixed"; Para fijar a pesar de bajar por la página, para estar por encima de otros elementos se usa: "z-index:2" cada número positivo es un plano hacia la persona, "se aleja de la pantalla".
+
+- Sticky (pegajoso): Para que se vaya pegando le dices a partir de cuando, por ejemplo: "top:100px;", para que se despegue tiene que lleagr a tope de su padre que hará de limite, para ello se crea por ejemplo un contenerdor relative.
+
+observación: para que al hacer clic en otro enlace se deslice más suave y se vea como una transición
+
+"scroll-behavior: smooth;"
+
+cuando el texto sobre pasa y chorrea en otros
+"overflow: hidden" (lo que no cabe lo pierde)
+x: es hacia derecha
+y: es hacia abajo
+scroll: añade barra de desplazamiento

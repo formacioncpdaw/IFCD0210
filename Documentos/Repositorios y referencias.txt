@@ -25,3 +25,16 @@
 	https://codi.link (Para codificar código diferentes lenguajes online)
 
 	https://codepen.io (Para codificar código diferentes lenguajes online)
+
+	https://html-css-js.com/html/generator/ (Generador sombras)
+	
+	https://fonts.google.com/specimen/Fira+Mono?preview.text=fira%20mono%0A&query=fira+mono (Fuentes)
+
+	web archive.ph: Para ver publicaciones y saltarse cookies y demás en algunas páginas
+
+	
+
+	
+
+color picker
+include fonawesone html
