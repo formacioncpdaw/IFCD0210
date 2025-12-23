@@ -1,0 +1,127 @@
+/* Importación de Tipo de letra para hoja de estilo*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Resetear parámetros navegador por defecto*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Asignar tamaño al documento para ayudar para tener una base de medida y posteriormente faciliatar ajustes 
+para el responsive (coincide con el tamaño por defecto que suelen tener los navegadores*/
+
+html{
+    font-size: 16px;
+}
+
+/* Asignamos a todo el cuerpo que contrendrá el contenido de la página el tipo de letra 
+junto con el color de fondo que será el mismo para toda la página*/
+
+body{
+    font-family: 'Raleway';
+    background: #f3f4f6;
+}
+
+/* Cabecera */
+
+header{
+    display: flex;
+    align-items: center;
+    height: 90px;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin: 0 auto;
+        max-width: 1100px;
+}
+
+.logo a{
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #7a797d;
+    cursor: pointer;
+}
+
+header nav ul{
+    list-style: none;
+
+}
+
+header nav ul li{  
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+header nav ul li a{
+    font-size: 18px;
+    font-weight: 500;
+    color: #7a797d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Main Index*/
+
+.main_index{
+    background-image: url(/imagenes/fondo.jpg);
+    background-size: 100% cover;
+}
+
+.contenedor_tarjetas{
+    display: flex;
+    align-content: center;
+    gap: 2rem;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.tarjeta img{
+    max-width: 100%;
+    height: 450px;
+}
+
+.tarjeta h2{
+    margin-bottom: 1.1rem;
+    color: black;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.tarjeta p{
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.7em;
+    font-weight: 200;
+    text-align: center;
+}
+
+/* Footer*/
+
+footer{
+    background: #cccad1;
+    padding: 60px;
+}
+
+footer button{
+    background-color: #000;
+    
+    border-radius: 8x;
+    height: 5vh;
+    font-weight: 500;
+    cursor: pointer;box-sizing: border-box;
+   
+    box-sizing: border-box;
+}
+
+footer button a{
+    text-decoration: none;
+    color: #fff; 
+    padding: 1px 12px 1px 12px;
+    text-align: center;
+}
