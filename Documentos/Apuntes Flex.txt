@@ -1,0 +1,8 @@
+Display: Flex (para ser flexible)
+flex-grow: crece hasta el ancho ventana (0 o 1, 1 enciende es sí se llena el contenido)
+flex-shrink: para que no encoja (0 o 1, 1 enciende, no quiero que encoja modo responsive sirve)
+justify-content: Ajustar a lo ancho, distribuye los item de diferentes modos (space varios modos)
+flex-wrap: si no caben en el ancho se parte y continua en la siguiente fila
+align-items: Alinear verticalmente. (stretch para expandir verticalmente)
+gap: huecos entre ítems (solo los huecos entre elementos, no respeta márgenes, como caigan)
+box-shadow: 0 4px 8px; (arriba abajo y laterales)

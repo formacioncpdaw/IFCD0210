@@ -1,0 +1,5 @@
+- Añadir archivo hoja de estilo a archivo HTML: <link rel="stylesheet" href="">
+- Añadir enlace a archivo HTML como "HOME", "BLOG", "ABOUT": <a href="about.html">About</a> (si se menciona la carpeta que tenga un "Index.html" no hace falta especificar el archivo HTML sólo la carpeta)
+- Indentar en Visual Code: Control + SHIFT + P: 
+
+- Corner-shape: scoop (como puzzle para una imagen dependiendo del border-radius)

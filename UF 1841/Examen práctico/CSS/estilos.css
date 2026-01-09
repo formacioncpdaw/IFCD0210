@@ -1,0 +1,232 @@
+/* Importación de Tipo de letra para hoja de estilo*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Resetear parámetros navegador por defecto*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Asignar tamaño al documento para ayudar para tener una base de medida y posteriormente faciliatar ajustes 
+para el responsive (coincide con el tamaño por defecto que suelen tener los navegadores*/
+
+html{
+    font-size: 16px;
+}
+
+/* Asignamos a todo el cuerpo que contrendrá el contenido de la página el tipo de letra 
+junto con el color de fondo que será el mismo para toda la página*/
+
+body{
+    font-family: 'Raleway';
+    background: #f3f4f6;
+}
+
+/* Cabecera */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    margin: 0 30px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.logo a{
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #7a797d;
+    cursor: pointer;
+}
+
+header nav ul{
+    list-style: none;
+}
+
+header nav ul li{  
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+header nav ul li a{
+    font-size: 18px;
+    font-weight: 500;
+    color: #7a797d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Main Index*/
+
+.main_index{
+    background-image: url(/imagenes/fondo.jpg);
+    height: 50rem;
+    position: relative;
+    background-position: center;
+}
+
+.h1_y_p{
+    width: 65%;
+    height: 20%;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: white;
+    padding: 5rem;
+    margin-left: 10rem;
+    border:  20rem;
+    position: absolute;
+    top: 28rem;
+}
+
+.titulo{
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #000;
+    font-weight: 800;
+}
+
+.parrafo{
+    margin: 10px 0;
+    line-height: 1.7em;
+    font-weight: 200;
+    color: #7a707d;
+}
+
+.contenedor_tarjetas_uno{
+    display: flex;
+    align-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    background-color: white;
+    padding-top: 7rem;
+}
+
+.contenedor_tarjetas_dos{
+    display: flex;
+    align-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 5rem;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+.tarjeta img{
+    max-width: 100%;
+    height: 450px;
+}
+
+.tarjeta h2{
+    margin-bottom: 1.1rem;
+    color: black;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.tarjeta p{
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.7em;
+    font-weight: 200;
+    text-align: center;
+    color: #7a797d;
+}
+
+/* Main about*/
+.seccion_about{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.main_about_izquierda{
+    width: 30%;
+    text-align: left;
+    padding-left: 7rem;
+    padding-right: 2rem;
+}
+
+.main_about_izquierda h1{
+    padding-bottom: 3rem;
+}
+
+.main_about_izquierda p{
+    color: #7a797d;
+    font-weight: 200;
+    line-height: 1.5rem;
+}
+
+.main_about_derecha{
+   width: 30%;
+   padding-left: 5rem;
+
+}
+
+.main_contact{
+    padding: 7rem;
+    padding-top: 11rem;
+    margin-bottom: 3rem;
+    
+}
+
+.main_contact h1{
+    padding-bottom: 3rem;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.main_contact p{
+    color: #7a707d;
+    padding-bottom: 1.5rem;
+    font-weight: 200;
+}
+
+/* Footer*/
+
+footer{
+    background: #cccad1;
+    padding: 60px;
+    align-items: center;
+    text-align: center;
+}
+
+footer button{
+    background-color: #000;
+    border-radius: 13px;
+    height: 5vh;
+    font-weight: 500;
+    cursor: pointer;
+    box-sizing: border-box;
+    
+    
+}
+
+footer button a{
+    text-decoration: none;
+    color: #fff; 
+    padding: 3px 5px 3px 5px;
+    text-align: center;
+}
+
+/* About */
+
+.seccion_about{
+    padding: 150px 0;
+}

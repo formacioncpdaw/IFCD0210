@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        .padre{
+            font-size:40px; 
+        }
+
+        .hijo{
+            font-size:0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="absoluto">
+        <p>
+            Unidades relativas
+            <ul>
+                <li>em: Font-size</li> /* Unidades proporcionales al elemento padre, normalmente para tipografía*/
+                <li>rem</li> /* Proporcional al elemento raíz. Se suele aplicar a la tipografía*/
+                <li>porcentajes</li>
+                <li>vw y hw</li>
+            </ul>
+            
+        </p>
+    </div>  
+
+    <div class="padre"></div>
+        Yo soy tu padre
+        <p class="hijo">
+            Yo soy el hijo
+        </p>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+- Repositorios clase: 
+
+	https://acortar.link/MAKKoY
+
+- Google Drive curso: 
+
+	https://acortar.link/aMUqlk
+
+- Compartir ejercicios servidor:
+
+	Python -m http.server -b 0.0.0.0
+
+- Repositorio GitHub modo HTML:
+
+	https://profe-teo.github.io/torre7/
+
+- Enlaces de interés:
+
+	https://docs.emmet.io/cheat-sheet
+
+	https://quickref.me (recursos para todo tipo de lenguajes y páginas)
+
+	https://placehold.com (tamaño de imágenes para maquetar)
+
+	https://codi.link (Para codificar código diferentes lenguajes online)
+
+	https://codepen.io (Para codificar código diferentes lenguajes online)
+
+	https://html-css-js.com/html/generator/ (Generador sombras)
+	
+	https://fonts.google.com/specimen/Fira+Mono?preview.text=fira%20mono%0A&query=fira+mono (Fuentes)
+
+	web archive.ph: Para ver publicaciones y saltarse cookies y demás en algunas páginas
+
+	
+
+	
+
+color picker
+include fonawesone html
