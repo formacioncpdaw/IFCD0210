@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito Compra</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body>
+
+    <div class="contenedorGeneral">
+        <header>
+            <h1>Almacén Manolo</h1>
+        </header>
+
+    <div class="contenedorTarjetas">
+        <div class="estantes">
+            <div class="producto" id="prod1" data-precio="12.89">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="imagenes/zapatillas2.jpg" alt="foto">
+                <p class="descripcion">Cool</p>
+                <span class="precio">12,65€</span>
+                <button class="boton_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" id="prod2" data-precio="15">
+                <h3 class="nombre">Jersey</h3>
+                <img src="imagenes/jersey.jpg.webp" alt="foto">
+                <p class="descripcion">Demasiado para el body</p>
+                <span class="precio">20€</span>
+                <button class="boton_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" id="prod1" data-precio="12.89">
+                <h3 class="nombre">Zapatillas</h3>
+                <img src="imagenes/zapatillas3.jpg" alt="foto">
+                <p class="descripcion">Atrae mujeres</p>
+                <span class="precio">14,99€</span>
+                <button class="boton_comprar">Comprar</button>
+            </div>
+
+            <div class="producto" id="prod2" data-precio="15">
+                <h3 class="nombre">Camiseta</h3>
+                <img src="imagenes/camiseta.jpg" alt="foto">
+                <p class="descripcion">Fashion a tope</p>
+                <span class="precio">18€</span>
+                <button class="boton_comprar">Comprar</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="carrito">
+        <img src="imagenes/carrito.jpg" alt="">
+        <p>Carrito de la compra</p>
+        <ul id="lista">
+            <li></li>
+            <li></li>
+        </ul>
+        <p id="total">0</p>
+        <button id="pagar">Pagar</button>
+    </div>
+
+    <footer class="pie">
+            <ul></ul>
+                <li"><a href="https://cookiefirst.com/z0f76a1d14fd21a8fb5fd0d03e0fdc3d3cedae52f?wsidchk=9923939&pdata=https%253A%252F%252Fcookiefirst.com%252Fes%252Fgenerador-de-politica-de-cookies-y-politica-de-privacidad-para-su-sitio-web%252F%253Futm_source%253Dgoogle%2526utm_medium%253Dcpc%2526utm_campaign%253Dspain_search%2526gad_source%253D1%2526gad_campaignid%253D12798139610%2526gbraid%253D0AAAAACv37T8hV7xu5d2v1xb8M1PsqsMni%2526gclid%253DEAIaIQobChMI8Jyw-ImikgMVHqn9BR0ghQW_EAAYASAAEgLekfD_BwE&id=7fa3b767c460b54a2be4d49030b349c7&ts=1769185598">Contacto</a></li>
+                <li><a href="https://cookiefirst.com/info-about-cookie-consent/?_gl=1*1hy37db*_up*MQ..*_ga*MTIyMTg5MjI0MS4xNzY5MTg1NjY4*_ga_Y2P3JXV84S*czE3NjkxODU2NjUkbzEkZzAkdDE3NjkxODU2NjUkajYwJGwwJGgw">Política privacidad</a></li>
+                <li><a href="https://www.garantia.com/en/">Garantías</a></li>
+    </footer>
+</div>
+
+    <script>
+        let productos = document.querySelectorAll(".producto");
+let total = document.getElementById("total");
+let lista_carrito = document.getElementById("lista");
+
+for (let i = 0; i < productos.length; i++) {
+    let boton = productos[i].querySelector(".boton_comprar");
+    let precio = productos[i].getAttribute("data-precio");
+    let nombre = productos[i].querySelector(".nombre");
+
+    boton.addEventListener("click", function () {
+        let li = document.createElement("li");
+        li.innerHTML = nombre.textContent + " - " + precio + "€";
+        lista_carrito.appendChild(li);
+
+        total.innerHTML = (parseFloat(total.innerHTML) + parseFloat(precio)).toFixed(2);
+    });
+}
+
+//------Pagar----
+let pagar = document.getElementById("pagar");
+pagar.addEventListener("click", function () {
+    lista_carrito.innerHTML = "";
+    total.innerHTML = "0";
+});
+
+    </script>
+</body>
+</html>
+

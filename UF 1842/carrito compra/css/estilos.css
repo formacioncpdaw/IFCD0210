@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 16px;
+
+}
+
+header{
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(247, 235, 217);
+    height: 5rem;
+    align-items: center;
+    padding-top: 1.2rem;
+    font-family: "Rouge Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+}
+
+.contenedorTarjetas{
+    height: 22.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    background-color: rgba(245, 245, 220, 0.475);
+    justify-content: space-around;
+    
+}
+
+.estantes{
+    display: flex;
+    gap:2rem;
+    
+}
+.producto{
+    display: flex;
+    /* align-items: center; */
+    /* text-align: center; */
+    flex-direction: column;
+    height: 12rem;
+    width: 12rem;
+    background-color: rgb(186, 239, 239);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* gap: 2rem; */
+}
+.producto .precio {
+    margin-top: .5rem;
+    font-weight: bold;
+    color: #2a7a2a;
+}
+
+.boton_comprar {
+    margin-top: 0.3rem;
+    background-color: #2a7a2a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+
+.carrito{
+    background-image: url("imagenes/carrito.jpg");
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    color: brown;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.carrito img{
+    padding-right: 2rem;
+}
+.pie{
+    height: 4rem;
+    background-color: rgba(128, 128, 128, 0.176);
+    color: black;
+    text-align: center;
+
+}
+.pie ul{
+    justify-content: space-around;
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+    color: black;
+}
+.pie ul li{
+    text-decoration: none;
+    display: inline-block;
+    list-style-type: none;
+    color: black;
+}
+
+.pie ul li a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    list-style-type: none;
+}
+
+#total {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #5a4635;
+}
+
+#pagar {
+    margin-top: 1rem;
+    padding: .7rem 1.2rem;
+    background-color: #b33a3a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+#lista{
+    padding: 2rem;
+}
