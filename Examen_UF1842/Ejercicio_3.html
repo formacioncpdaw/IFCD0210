@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen práctico UF1842 | Ejercicio 3 | José Enrique Aguilar</title>
+</head>
+
+<body>
+    <h1>Gestión de Calificaciones de los alumnos</h1>
+    <div id="resultados"></div>
+
+  <script>
+    // Función principal que calculará el resultado del alumno
+    function calcularResultado(notas) {
+
+    // Apartado "1" para palcular la media
+    let suma = 0;
+    for (let i = 0; i < notas.length; i++) {
+        suma += notas[i];
+    }
+
+    let media = suma / notas.length;
+
+    // Aparatdo "2" para saber el estado
+    let estado = (media >= 5) ? "Aprobado" : "Suspenso";
+
+    // Aparatado "3" para saber la calificación final
+    let calificacion = "";
+      if (media < 5) {
+        calificacion = "Insuficiente";
+
+      } else if (media < 7) {
+        calificacion = "Suficiente";
+
+      } else if (media < 9) {
+        calificacion = "Notable";
+
+      } else {
+        calificacion = "Sobresaliente";
+      }
+
+    // Apartado "4" para el array con [media, estado, calificacion]
+    return [media.toFixed(2), estado, calificacion];
+    }
+
+    // Array de prueba con notas
+    let notasAlumno = [5, 7, 6, 8, 9];
+
+    // Para llamar a la función
+    let resultado = calcularResultado(notasAlumno);
+
+    // Para mostrar resultados en la consola
+    console.log("Media:", resultado[0]);
+    console.log("Estado:", resultado[1]);
+    console.log("Calificación final:", resultado[2]);
+
+    // Para mostrar los resultados en el DOM
+    const div = document.getElementById("resultados");
+    div.innerHTML = 
+    ` <p>Media: ${resultado[0]}</p>
+      <p>Estado: ${resultado[1]}</p>
+      <p>Calificación final: ${resultado[2]}</p> `;
+
+  </script>
+
+</body>
+</html>

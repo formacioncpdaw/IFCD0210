@@ -5,32 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen práctico UF1842 | Ejercicio 2 | José Enrique Aguilar</title>
 </head>
+
 <body>
+    <h1>Lista de Números</h1>
+    <ul id="listaNumeros"></ul>
+    <p id="sumaTotal"></p>
+
     <script>
+
+    // Declaración de variables
     let numeros = [3, 7, 2, 9, 5, 10];
+    let suma = 0;
+    let ul = document.getElementById("listaNumeros");
 
-    // Apartado "a" (recorrer array con bucle for)
+    //Apartado "a" para recorrer el array
+    
     for (let i = 0; i < numeros.length; i++) {
-        console.log("Elemento:", numeros[i]);
+      let numero = numeros[i];
+
+    // Apartado "b" para sumar los números
+      suma += numero;
+
+    // Apartado "c" para generar la lista dinámicamente 
+      let li = document.createElement("li");
+      li.textContent = numero;
+      ul.appendChild(li);
     }
 
-    // Apartado "b" (calcular la suma total)
-    let suma = 0;  // se inicia el acumulador
-    for (let i = 0; i < numeros.length; i++) {
-        suma += numeros[i];
-    }
+    // Para mostrar la suma total al final del documento
+    document.getElementById("sumaTotal").textContent = "Suma total de todos los números: " + suma;
+
+    // Para mostrar en consola también
     console.log("Suma total:", suma);
-
-    // Apartado "c" (generar dinámicamente una lista HTML)
-    let lista = document.createElement("ul");
-
-    for (let i = 0; i < numeros.length; i++) {
-        let item = document.createElement("li");
-        item.textContent = numeros[i];
-        lista.appendChild(item);
-    }
-
-    document.body.appendChild(lista);
+  
 </script>
 
 </body>
