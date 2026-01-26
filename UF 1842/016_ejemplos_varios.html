@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #scrollbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10px;
+            background-color: aqua;
+            width: 0;
+            z-index: 1;
+        }
+
+        #gris {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10px;
+            background-color: rgb(175, 179, 179);
+            width: 100%;
+
+        }
+
+        .oscuro {
+            background-color: rgb(48, 47, 47);
+            color: whitesmoke;
+
+        }
+
+        .flecha {
+            width: 50px;
+            height: 40px;
+            background-color: lightgrey;
+            color: whitesmoke;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            position: fixed;
+            right: 5px;
+            bottom: 40px;
+        }
+
+        .flecha:hover {
+            cursor: pointer;
+        }
+        /* ********** Tabs ************************************* */
+        .contenedor{
+            margin: 0 auto;
+            width:80%;
+            max-width: 600px;
+            background-color: aliceblue;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.884);
+            overflow:hidden;
+        }
+
+        /* Estilo de los tabs*/
+        .tabs{
+            display: flex;
+            background-color: rgb(84, 129, 242);
+            border-radius: 8px 8px 0 0 ;
+        }
+        .tab{
+            padding:15px;
+            flex:1;
+            text-align: center;
+            background-color: rgb(72, 52, 200);
+            color:whitesmoke;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tab:hover{
+            background-color: whitesmoke;
+            color: rgb(72, 52, 200);
+        }
+        .tab.active{
+            background-color: rgba(214, 241, 151, 0.555);
+            color: rgb(72, 52, 200);
+        }
+
+        /* Estilos del contenido*/
+        .tab-content{
+            padding:20px;
+            display:none;
+            background-color: whitesmoke;
+            color: #333;
+        }
+
+        .tab-content.active{
+            display:block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="gris"></div>
+    <div id="scrollbar"></div>
+
+    <h2>Barra de progreso con scroll</h2>
+    <button id="btn_tema">Tema Oscuro</button>
+
+    <div>
+        <textarea name="" id="cuadro" maxlength="100"></textarea>
+        <p>Utilizados <span id="cuenta">0</span> de 100 caracteres</p>
+        <button id="btnDeshacer">Deshacer</button>
+
+    </div>
+
+    <div class="contenedor">
+        <div class="tabs">
+            <div class="tab" data-target="tab1">Pestaña 1</div>
+            <div class="tab" data-target="tab2">Pestaña 2</div>
+            <div class="tab" data-target="tab3">Pestaña 3</div>
+        </div>
+        <!-- Contenidos de las pestañas -->
+         <div class="tab-content" id='tab1'>Contenido de la pestaña 1</div>
+         <div class="tab-content" id='tab2'>Contenido de la pestaña 2</div>
+         <div class="tab-content" id='tab3'>Contenido de la pestaña 3</div>
+    </div>
+    <script>
+        let tabs = document.querySelectorAll(".tab");
+        let contenidos = document.querySelectorAll(".tab-content");
+        for(let i = 0; i< tabs.length; i++){
+            tabs[i].addEventListener('click', function(){
+                for(let j = 0; j < tabs.length; j++){
+                    tabs[j].classList.remove('active');
+                    contenidos[j].classList.remove('active');
+                }
+
+                this.classList.add('active');
+                let targetId = this.getAttribute('data-target');
+                let targetContent = document.getElementById(targetId);
+                targetContent.classList.add('active');
+            });
+        }
+
+
+    </script>
+
+
+
+    <div class="flecha" onclick="window.scrollTo(0,0)">^</div>
+
+    <div style="height:1100px"></div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            let scrolled = window.scrollY;
+            let altura = document.body.scrollHeight - window.innerHeight;
+            let porcentaje = scrolled / altura;
+            document.getElementById("scrollbar").style.width = porcentaje * 100 + "%";
+            document.getElementById("gris").style.width = scrolled ? '100%' : '0';
+
+            // Mostrar flecha
+
+            let flecha = document.querySelector('.flecha');
+            if (porcentaje > 0.2) {
+                flecha.style.display = "block";
+            }
+            else {
+                flecha.style.display = "none";
+            }
+
+        });
+    </script>
+
+
+    <!-- ************************************************************* -->
+
+
+
+    <script>
+        const boton = document.getElementById("btn_tema");
+        boton.addEventListener('click', function () {
+            document.body.classList.toggle('oscuro');
+
+            boton.textContent = document.body.classList.contains('oscuro') ? 'Tema Claro' : 'Tema Oscuro';
+        })
+    </script>
+
+    <!-- *********************** Cuadro de texto ************************** -->
+
+    <script>
+        let cuadroTexto = document.getElementById("cuadro");
+        let cuentaTexto = document.getElementById("cuenta");
+        let historial = [];
+
+        cuadroTexto.addEventListener('input', function () {
+            cuentaTexto.innerHTML = cuadroTexto.value.length;
+            // Deshacer
+            historial.push(cuadroTexto.value);
+
+        });
+
+        let btn_desh = document.getElementById("btnDeshacer");
+        btn_desh.addEventListener('click', function () {
+            historial.pop();
+            //cuadroTexto.value = historial[historial.length -1] || '';
+            cuadroTexto.value = historial.slice(-1) || '';
+            cuentaTexto.innerHTML = cuadroTexto.value.length;
+        })
+    </script>
+
+
+
+</body>
+
+</html>
