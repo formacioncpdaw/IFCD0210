@@ -1,0 +1,75 @@
+
+Parte práctica:
+
+1️:Función Python para validar contraseña
+
+import re
+
+def validar_contraseña(password):
+    if len(password) < 8:
+        return "Error: menos de 8 caracteres"
+    if not re.search(r"[A-Z]", password):
+        return "Error: falta mayúscula"
+    if not re.search(r"[0-9]", password):
+        return "Error: falta número"
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
+        return "Error: falta carácter especial"
+    return "Válida"
+
+# Ejemplo:
+
+print(validar_contraseña("MiPass123!"))  # Válida
+print(validar_contraseña("mipass"))      # Error: menos de 8 caracteres
+
+
+2️: Consultas SQL para la base de datos de jardinería
+
+- a. Pedidos rechazados en 2009:
+
+SELECT * FROM pedidos
+WHERE estado = 'Rechazado' AND YEAR(fecha) = 2009;
+
+- b. Pedidos entregados en enero de cualquier año:
+
+SELECT * FROM pedidos
+WHERE estado = 'Entregado' AND MONTH(fecha) = 1;
+
+- c. Productos ornamentales con más de 100 unidades, ordenados por precio descendente:
+
+SELECT * FROM productos
+WHERE gama = 'Ornamentales' AND unidades_stock > 100
+ORDER BY precio_venta DESC;
+
+- d. Diferentes gamas de producto por cliente:
+
+SELECT cliente_id, gama, COUNT(*) as total_compras
+FROM pedidos
+JOIN detalle_pedidos ON pedidos.id = detalle_pedidos.pedido_id
+JOIN productos ON detalle_pedidos.producto_id = productos.id
+GROUP BY cliente_id, gama;
+
+3️: Programa Python para filtrar JSON y calcular edad media:
+
+import json
+
+datos = [
+    {"nombre": "Ana", "edad": 25},
+    {"nombre": "Luis", "edad": 17},
+    {"nombre": "Carlos", "edad": 30}
+]
+
+# Filtrar mayores de edad
+mayores = [persona for persona in datos if persona["edad"] >= 18]
+
+# Mostrar nombres
+nombres = [persona["nombre"] for persona in mayores]
+print("Mayores de edad:", nombres)
+
+# Calcular edad media
+edad_media = sum(persona["edad"] for persona in mayores) / len(mayores)
+print("Edad media:", edad_media)
+
+Salida esperada:
+
+Mayores de edad: ['Ana', 'Carlos']
+Edad media: 27.5
